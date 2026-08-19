@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mailmate</groupId>
+    <artifactId>mailmate</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.release>23</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <javafx.version>23.0.2</javafx.version>
+        <log4j.version>2.26.1</log4j.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- ================================================= -->
+        <!-- GOOGLE GMAIL API                                  -->
+        <!-- ================================================= -->
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>1.39.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-gmail</artifactId>
+            <version>v1-rev20250630-2.0.0</version>
+        </dependency>
+
+
+        <!-- ================================================= -->
+        <!-- PDF EXTRACTION                                    -->
+        <!-- ================================================= -->
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>3.0.8</version>
+        </dependency>
+
+
+        <!-- ================================================= -->
+        <!-- MICROSOFT WORD EXTRACTION                         -->
+        <!-- ================================================= -->
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+
+
+        <!-- ================================================= -->
+        <!-- OCR / IMAGE TEXT EXTRACTION                       -->
+        <!-- ================================================= -->
+
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>5.19.0</version>
+        </dependency>
+
+
+        <!-- ================================================= -->
+        <!-- LOGGING                                           -->
+        <!-- ================================================= -->
+
+        <!-- Log4j API -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <!-- Log4j runtime implementation -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <!-- ================================================= -->
+        <!-- JAVAFX GUI                                        -->
+        <!-- ================================================= -->
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <!-- ===================================================== -->
+    <!-- BUILD CONFIGURATION                                   -->
+    <!-- ===================================================== -->
+
+    <build>
+
+        <sourceDirectory>
+            ${project.basedir}/src
+        </sourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>
+                    ${project.basedir}/src/resources
+                </directory>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <!-- ================================================= -->
+            <!-- JAVA COMPILER                                     -->
+            <!-- ================================================= -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.15.0</version>
+
+                <configuration>
+                    <release>23</release>
+                </configuration>
+            </plugin>
+
+
+            <!-- ================================================= -->
+            <!-- JAVAFX MAVEN PLUGIN                               -->
+            <!-- ================================================= -->
+
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+
+                <configuration>
+                    <mainClass>
+                        app.MailMateApp
+                    </mainClass>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>

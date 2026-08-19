@@ -16,3 +16,12 @@ target/
 # Operating System files
 .DS_Store
 Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+credentials.json
+tokens/
+
+# MailMate generated files
+mailmate-attachments/

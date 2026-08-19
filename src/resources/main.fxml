@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/23"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="ui.MailMateController"
+        styleClass="mailmate-root">
+
+
+    <!-- ================================================= -->
+    <!-- LEFT SIDEBAR                                      -->
+    <!-- ================================================= -->
+
+    <left>
+
+        <VBox
+                prefWidth="220"
+                spacing="8"
+                styleClass="sidebar">
+
+            <padding>
+                <Insets
+                        top="24"
+                        right="16"
+                        bottom="24"
+                        left="16"/>
+            </padding>
+
+
+            <!-- APPLICATION -->
+
+            <Label
+                    text="MailMate"
+                    styleClass="app-title"/>
+
+            <Label
+                    text="Smart Email Manager"
+                    styleClass="app-subtitle"/>
+
+
+            <!-- ACCOUNT -->
+
+            <VBox
+                    spacing="3"
+                    styleClass="account-box">
+
+                <Label
+                        text="ACCOUNT"
+                        styleClass="section-label"/>
+
+                <Label
+                        fx:id="accountLabel"
+                        text="Not connected"
+                        wrapText="true"
+                        styleClass="account-label"/>
+
+                <Button
+                        fx:id="changeAccountButton"
+                        text="Change Account"
+                        maxWidth="Infinity"
+                        onAction="#handleChangeAccount"
+                        styleClass="change-account-button"/>
+
+            </VBox>
+
+
+            <!-- MAIL -->
+
+            <Label
+                    text="MAIL"
+                    styleClass="section-label"/>
+
+            <Button
+                    text="Inbox"
+                    maxWidth="Infinity"
+                    onAction="#showInbox"
+                    styleClass="nav-button"/>
+
+            <Button
+                    text="Unread"
+                    maxWidth="Infinity"
+                    onAction="#showUnread"
+                    styleClass="nav-button"/>
+
+            <Button
+                    text="Starred"
+                    maxWidth="Infinity"
+                    onAction="#showStarred"
+                    styleClass="nav-button"/>
+
+            <Button
+                    text="Important"
+                    maxWidth="Infinity"
+                    onAction="#showImportant"
+                    styleClass="nav-button"/>
+
+
+            <!-- FILTERS -->
+
+            <Label
+                    text="FILTERS"
+                    styleClass="section-label"/>
+
+            <Button
+                    text="Possible Spam"
+                    maxWidth="Infinity"
+                    onAction="#showSpam"
+                    styleClass="nav-button"/>
+
+            <Button
+                    text="Promotions"
+                    maxWidth="Infinity"
+                    onAction="#showPromotional"
+                    styleClass="nav-button"/>
+
+
+            <!-- SPACER -->
+
+            <Region
+                    VBox.vgrow="ALWAYS"/>
+
+
+            <!-- COUNTERS -->
+
+            <VBox
+                    spacing="8"
+                    styleClass="counter-panel">
+
+                <HBox
+                        spacing="10">
+
+                    <Label
+                            text="Emails"
+                            styleClass="counter-name"/>
+
+                    <Region
+                            HBox.hgrow="ALWAYS"/>
+
+                    <Label
+                            fx:id="emailCountLabel"
+                            text="0"
+                            styleClass="counter-value"/>
+
+                </HBox>
+
+
+                <HBox
+                        spacing="10">
+
+                    <Label
+                            text="Unread"
+                            styleClass="counter-name"/>
+
+                    <Region
+                            HBox.hgrow="ALWAYS"/>
+
+                    <Label
+                            fx:id="unreadCountLabel"
+                            text="0"
+                            styleClass="counter-value"/>
+
+                </HBox>
+
+
+                <HBox
+                        spacing="10">
+
+                    <Label
+                            text="Spam"
+                            styleClass="counter-name"/>
+
+                    <Region
+                            HBox.hgrow="ALWAYS"/>
+
+                    <Label
+                            fx:id="spamCountLabel"
+                            text="0"
+                            styleClass="counter-value"/>
+
+                </HBox>
+
+
+                <HBox
+                        spacing="10">
+
+                    <Label
+                            text="Promotions"
+                            styleClass="counter-name"/>
+
+                    <Region
+                            HBox.hgrow="ALWAYS"/>
+
+                    <Label
+                            fx:id="promotionalCountLabel"
+                            text="0"
+                            styleClass="counter-value"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <!-- REFRESH -->
+
+            <Button
+                    text="Refresh"
+                    maxWidth="Infinity"
+                    onAction="#handleRefresh"
+                    styleClass="refresh-button"/>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- ================================================= -->
+    <!-- CENTER - INBOX                                   -->
+    <!-- ================================================= -->
+
+    <center>
+
+        <VBox
+                spacing="0"
+                styleClass="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <HBox
+                    spacing="12"
+                    alignment="CENTER_LEFT"
+                    styleClass="top-bar">
+
+                <Label
+                        fx:id="pageTitle"
+                        text="Inbox"
+                        styleClass="page-title"/>
+
+                <Region
+                        HBox.hgrow="ALWAYS"/>
+
+                <TextField
+                        fx:id="searchField"
+                        prefWidth="300"
+                        promptText="Search emails..."
+                        onAction="#handleSearch"
+                        styleClass="search-field"/>
+
+                <Button
+                        text="Search"
+                        onAction="#handleSearch"
+                        styleClass="search-button"/>
+
+            </HBox>
+
+
+            <!-- STATUS -->
+
+            <HBox
+                    alignment="CENTER_LEFT"
+                    styleClass="status-bar">
+
+                <Label
+                        fx:id="statusLabel"
+                        text="Ready"
+                        styleClass="status-label"/>
+
+            </HBox>
+
+
+            <!-- EMAIL LIST -->
+
+            <ListView
+                    fx:id="emailListView"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="email-list"/>
+
+        </VBox>
+
+    </center>
+
+
+    <!-- ================================================= -->
+    <!-- RIGHT - EMAIL READER                              -->
+    <!-- ================================================= -->
+
+    <right>
+
+        <VBox
+                prefWidth="460"
+                spacing="10"
+                styleClass="email-reader">
+
+            <padding>
+                <Insets
+                        top="20"
+                        right="20"
+                        bottom="20"
+                        left="20"/>
+            </padding>
+
+
+            <!-- EMAIL HEADER -->
+
+            <VBox
+                    spacing="5">
+
+                <Label
+                        fx:id="subjectLabel"
+                        text="Select an email"
+                        wrapText="true"
+                        styleClass="email-subject"/>
+
+                <Label
+                        fx:id="senderLabel"
+                        text=""
+                        wrapText="true"
+                        styleClass="email-sender"/>
+
+                <Label
+                        fx:id="dateLabel"
+                        text=""
+                        styleClass="email-date"/>
+
+            </VBox>
+
+
+            <!-- METADATA -->
+
+            <HBox
+                    spacing="8">
+
+                <Label
+                        fx:id="categoryLabel"
+                        text=""
+                        styleClass="metadata-badge"/>
+
+                <Label
+                        fx:id="trustScoreLabel"
+                        text=""
+                        styleClass="metadata-label"/>
+
+                <Label
+                        fx:id="attachmentLabel"
+                        text=""
+                        styleClass="metadata-label"/>
+
+            </HBox>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <HBox
+                    spacing="7">
+
+                <Button
+                        fx:id="summaryButton"
+                        text="Summary"
+                        disable="true"
+                        onAction="#handleShowSummary"
+                        styleClass="action-button"/>
+
+                <Button
+                        fx:id="starButton"
+                        text="☆ Star"
+                        disable="true"
+                        onAction="#handleStarToggle"
+                        styleClass="star-action-button"/>
+
+                <Button
+                        fx:id="markSpamButton"
+                        text="Mark as Spam"
+                        disable="true"
+                        onAction="#handleMarkAsSpam"
+                        styleClass="spam-action-button"/>
+
+                <Region
+                        HBox.hgrow="ALWAYS"/>
+
+                <Button
+                        fx:id="archiveButton"
+                        text="Archive"
+                        disable="true"
+                        onAction="#handleArchive"
+                        styleClass="secondary-action-button"/>
+
+                <Button
+                        fx:id="deleteButton"
+                        text="Delete"
+                        disable="true"
+                        onAction="#handleDelete"
+                        styleClass="delete-button"/>
+
+            </HBox>
+
+
+            <!-- SUMMARY -->
+
+            <VBox
+                    spacing="5"
+                    styleClass="summary-panel">
+
+                <Label
+                        text="SUMMARY"
+                        styleClass="section-label-dark"/>
+
+                <TextArea
+                        fx:id="summaryArea"
+                        editable="false"
+                        wrapText="true"
+                        prefRowCount="4"
+                        promptText="Click Summary to generate a concise overview..."
+                        styleClass="summary-area"/>
+
+            </VBox>
+
+
+            <!-- ATTACHMENTS -->
+
+            <VBox
+                    spacing="5"
+                    styleClass="attachment-panel">
+
+                <HBox
+                        spacing="8"
+                        alignment="CENTER_LEFT">
+
+                    <Label
+                            text="ATTACHMENTS"
+                            styleClass="section-label-dark"/>
+
+                    <Region
+                            HBox.hgrow="ALWAYS"/>
+
+                    <Label
+                            text="Select a file"
+                            styleClass="attachment-hint"/>
+
+                </HBox>
+
+
+                <ListView
+                        fx:id="attachmentListView"
+                        prefHeight="110"
+                        styleClass="attachment-list"/>
+
+
+                <HBox
+                        spacing="8">
+
+                    <Button
+                            fx:id="downloadAttachmentButton"
+                            text="Download"
+                            disable="true"
+                            onAction="#handleDownloadAttachment"
+                            styleClass="attachment-button"/>
+
+                    <Button
+                            fx:id="extractAttachmentButton"
+                            text="Extract Text"
+                            disable="true"
+                            onAction="#handleExtractAttachment"
+                            styleClass="attachment-button"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <!-- EMAIL BODY -->
+
+            <VBox
+                    spacing="5"
+                    VBox.vgrow="ALWAYS">
+
+                <Label
+                        text="MESSAGE"
+                        styleClass="section-label-dark"/>
+
+                <TextArea
+                        fx:id="bodyArea"
+                        editable="false"
+                        wrapText="true"
+                        VBox.vgrow="ALWAYS"
+                        promptText="Select an email to read its contents..."
+                        styleClass="email-body"/>
+
+            </VBox>
+
+
+            <!-- BULK SPAM ACTION -->
+
+            <Button
+                    fx:id="deleteSpamButton"
+                    text="Delete All Spam"
+                    disable="true"
+                    maxWidth="Infinity"
+                    onAction="#handleDeleteAllSpam"
+                    styleClass="delete-spam-button"/>
+
+            <!-- BULK PROMOTIONAL ACTION -->
+
+            <Button
+                    fx:id="deletePromotionalButton"
+                    text="Clear All Promotions"
+                    visible="false"
+                    managed="false"
+                    disable="true"
+                    maxWidth="Infinity"
+                    onAction="#handleDeleteAllPromotions"
+                    styleClass="delete-promotional-button"/>
+
+        </VBox>
+
+    </right>
+
+</BorderPane>

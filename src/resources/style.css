@@ -1,0 +1,774 @@
+/* =========================================================
+   MAILMATE
+   Main JavaFX stylesheet
+   ========================================================= */
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+.mailmate-root {
+  -fx-background-color: #f4f7fb;
+  -fx-font-family: "Segoe UI", "Inter", Arial, sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  -fx-background-color: #17233d;
+}
+
+.app-title {
+  -fx-font-size: 28px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+.app-subtitle {
+  -fx-font-size: 12px;
+  -fx-text-fill: #91a0bb;
+  -fx-padding: 0 0 18 1;
+}
+
+/* =========================================================
+   SECTION LABELS
+   ========================================================= */
+
+.section-label {
+  -fx-font-size: 10px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #8291ac;
+  -fx-padding: 10 4 5 4;
+}
+
+.section-label-dark {
+  -fx-font-size: 10px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #68758b;
+  -fx-padding: 2 0 3 0;
+}
+
+/* =========================================================
+   ACCOUNT
+   ========================================================= */
+
+.account-box {
+  -fx-background-color: #202f4d;
+  -fx-background-radius: 10px;
+  -fx-padding: 12px;
+}
+
+.account-label {
+  -fx-font-size: 11px;
+  -fx-text-fill: #d8e0ef;
+}
+
+/* =========================================================
+   CHANGE ACCOUNT
+   ========================================================= */
+
+.change-account-button {
+  -fx-background-color: #2a3a5d;
+  -fx-text-fill: #dbe3f2;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-border-color: #3c4d70;
+  -fx-border-radius: 7px;
+  -fx-padding: 7px 10px;
+  -fx-cursor: hand;
+}
+
+.change-account-button:hover {
+  -fx-background-color: #34496f;
+  -fx-text-fill: #ffffff;
+  -fx-border-color: #52678f;
+}
+
+.change-account-button:pressed {
+  -fx-background-color: #3b527d;
+}
+
+.change-account-button:disabled {
+  -fx-background-color: #26344f;
+  -fx-text-fill: #8795ad;
+  -fx-border-color: #344360;
+  -fx-opacity: 0.7;
+}
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+   ========================================================= */
+
+.nav-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: #dbe3f2;
+  -fx-font-size: 13px;
+  -fx-font-weight: 500;
+  -fx-alignment: CENTER_LEFT;
+  -fx-background-radius: 8px;
+  -fx-padding: 10px 12px;
+  -fx-cursor: hand;
+}
+
+.nav-button:hover {
+  -fx-background-color: #263657;
+  -fx-text-fill: #ffffff;
+}
+
+.nav-button:pressed {
+  -fx-background-color: #30456e;
+}
+
+/* =========================================================
+   REFRESH BUTTON
+   ========================================================= */
+
+.refresh-button {
+  -fx-background-color: #4f7cff;
+  -fx-text-fill: #ffffff;
+  -fx-font-size: 13px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 8px;
+  -fx-padding: 10px 12px;
+  -fx-cursor: hand;
+}
+
+.refresh-button:hover {
+  -fx-background-color: #3f6ff0;
+}
+
+.refresh-button:pressed {
+  -fx-background-color: #345ed5;
+}
+
+/* =========================================================
+   COUNTER PANEL
+   ========================================================= */
+
+.counter-panel {
+  -fx-background-color: #202f4d;
+  -fx-background-radius: 10px;
+  -fx-padding: 12px;
+}
+
+.counter-name {
+  -fx-font-size: 11px;
+  -fx-text-fill: #aab7cb;
+}
+
+.counter-value {
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+  -fx-background-color: #f4f7fb;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.top-bar {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e1e6ef;
+  -fx-border-width: 0 0 1 0;
+  -fx-padding: 18px 22px;
+}
+
+.page-title {
+  -fx-font-size: 22px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #172033;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-field {
+  -fx-background-color: #f1f4f8;
+  -fx-background-radius: 9px;
+  -fx-border-color: transparent;
+  -fx-padding: 9px 12px;
+  -fx-font-size: 12px;
+  -fx-text-fill: #293348;
+}
+
+.search-field:hover {
+  -fx-background-color: #edf1f6;
+}
+
+.search-field:focused {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #6f8ff7;
+  -fx-border-radius: 9px;
+  -fx-background-radius: 9px;
+}
+
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
+
+.search-button {
+  -fx-background-color: #4f7cff;
+  -fx-text-fill: #ffffff;
+  -fx-font-weight: bold;
+  -fx-background-radius: 8px;
+  -fx-padding: 9px 15px;
+  -fx-cursor: hand;
+}
+
+.search-button:hover {
+  -fx-background-color: #3f6ff0;
+}
+
+.search-button:pressed {
+  -fx-background-color: #355ed0;
+}
+
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
+
+.status-bar {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e4e8f0;
+  -fx-border-width: 0 0 1 0;
+  -fx-padding: 8px 22px;
+}
+
+.status-label {
+  -fx-font-size: 11px;
+  -fx-text-fill: #738198;
+}
+
+/* =========================================================
+   EMAIL LIST
+   ========================================================= */
+
+.email-list {
+  -fx-background-color: #ffffff;
+  -fx-border-color: transparent;
+}
+
+.email-list .list-cell {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #edf0f5;
+  -fx-border-width: 0 0 1 0;
+  -fx-padding: 11px 14px;
+  -fx-font-size: 12px;
+  -fx-text-fill: #2e3950;
+}
+
+.inbox-subject {
+  -fx-font-size: 13px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #202a3d;
+}
+
+.inbox-sender {
+  -fx-font-size: 11px;
+  -fx-text-fill: #65728a;
+}
+
+.inbox-metadata {
+  -fx-font-size: 10px;
+  -fx-text-fill: #7b879b;
+}
+
+.inbox-date {
+  -fx-font-size: 10px;
+  -fx-text-fill: #8a95a7;
+  -fx-padding: 2px 0 0 8px;
+}
+
+.inbox-indicators {
+  -fx-min-width: 32px;
+  -fx-pref-width: 32px;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #4f7cff;
+  -fx-padding: 2px 0 0 0;
+}
+
+.email-list .list-cell:hover {
+  -fx-background-color: #f6f8fd;
+}
+
+.email-list .list-cell:selected {
+  -fx-background-color: #eaf0ff;
+  -fx-border-color: #c8d5f7;
+  -fx-text-fill: #17233d;
+}
+
+.email-list .list-cell:focused {
+  -fx-background-insets: 0;
+}
+
+.email-list .list-cell:empty {
+  -fx-background-color: #ffffff;
+  -fx-border-color: transparent;
+}
+
+/* =========================================================
+   EMAIL READER
+   ========================================================= */
+
+.email-reader {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e1e6ef;
+  -fx-border-width: 0 0 0 1;
+}
+
+.email-subject {
+  -fx-font-size: 21px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #172033;
+}
+
+.email-sender {
+  -fx-font-size: 12px;
+  -fx-text-fill: #59667d;
+}
+
+.email-date {
+  -fx-font-size: 11px;
+  -fx-text-fill: #8792a7;
+}
+
+/* =========================================================
+   METADATA BADGES
+   ========================================================= */
+
+.metadata-badge {
+  -fx-background-color: #eaf0ff;
+  -fx-text-fill: #4265c7;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 16px;
+  -fx-padding: 5px 10px;
+}
+
+.metadata-label {
+  -fx-background-color: #f1f4f8;
+  -fx-text-fill: #66738b;
+  -fx-font-size: 11px;
+  -fx-background-radius: 16px;
+  -fx-padding: 5px 10px;
+}
+
+/* =========================================================
+   EMAIL CATEGORY BADGES
+   ========================================================= */
+
+/*
+ * The controller assigns one of these classes:
+ *   category-normal
+ *   category-promotional
+ *   category-spam
+ *
+ * These styles make the email classification immediately
+ * visible without changing the underlying Email model.
+ */
+
+.category-normal {
+  -fx-background-color: #eaf0ff;
+  -fx-text-fill: #4265c7;
+  -fx-border-color: transparent;
+  -fx-border-radius: 16px;
+}
+
+.category-promotional {
+  -fx-background-color: #fff7e8;
+  -fx-text-fill: #b36a00;
+  -fx-border-color: #f0cf96;
+  -fx-border-radius: 16px;
+}
+
+.category-spam {
+  -fx-background-color: #fff1f1;
+  -fx-text-fill: #c13e3e;
+  -fx-border-color: #efc0c0;
+  -fx-border-radius: 16px;
+}
+
+/* Keep category badge text compact and consistent. */
+.category-normal,
+.category-promotional,
+.category-spam {
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 16px;
+  -fx-padding: 5px 10px;
+}
+
+/* =========================================================
+   GENERAL ACTION BUTTON
+   ========================================================= */
+
+.action-button {
+  -fx-background-color: #eaf0ff;
+  -fx-text-fill: #4265c7;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-border-color: transparent;
+  -fx-padding: 8px 12px;
+  -fx-cursor: hand;
+}
+
+.action-button:hover {
+  -fx-background-color: #dce6ff;
+}
+
+.action-button:pressed {
+  -fx-background-color: #ccd9ff;
+}
+
+/* =========================================================
+   STAR ACTION
+   ========================================================= */
+
+.star-action-button {
+  -fx-background-color: #fff8df;
+  -fx-text-fill: #9a7410;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-border-color: #ead79a;
+  -fx-border-radius: 7px;
+  -fx-padding: 8px 12px;
+  -fx-cursor: hand;
+}
+
+.star-action-button:hover {
+  -fx-background-color: #fff1bd;
+  -fx-border-color: #d9bd65;
+}
+
+.star-action-button:pressed {
+  -fx-background-color: #ffe9a3;
+}
+
+/* =========================================================
+   SPAM ACTION
+   ========================================================= */
+
+.spam-action-button {
+  -fx-background-color: #fff1f1;
+  -fx-text-fill: #c13e3e;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-border-color: #efc0c0;
+  -fx-border-radius: 7px;
+  -fx-padding: 8px 12px;
+  -fx-cursor: hand;
+}
+
+.spam-action-button:hover {
+  -fx-background-color: #ffe4e4;
+  -fx-border-color: #e8a1a1;
+}
+
+.spam-action-button:pressed {
+  -fx-background-color: #ffd9d9;
+}
+
+/* =========================================================
+   SECONDARY ACTION
+   ========================================================= */
+
+.secondary-action-button {
+  -fx-background-color: #f1f4f8;
+  -fx-text-fill: #536078;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-padding: 8px 12px;
+  -fx-cursor: hand;
+}
+
+.secondary-action-button:hover {
+  -fx-background-color: #e6ebf2;
+}
+
+.secondary-action-button:pressed {
+  -fx-background-color: #dce2ea;
+}
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+.delete-button {
+  -fx-background-color: #fff1f1;
+  -fx-text-fill: #c13e3e;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-border-color: #efc0c0;
+  -fx-border-radius: 7px;
+  -fx-padding: 8px 12px;
+  -fx-cursor: hand;
+}
+
+.delete-button:hover {
+  -fx-background-color: #ffe3e3;
+}
+
+.delete-button:pressed {
+  -fx-background-color: #ffd7d7;
+}
+
+/* =========================================================
+   SUMMARY PANEL
+   ========================================================= */
+
+.summary-panel {
+  -fx-background-color: #f8faff;
+  -fx-background-radius: 10px;
+  -fx-border-color: #e0e7f6;
+  -fx-border-radius: 10px;
+  -fx-padding: 10px;
+}
+
+.summary-area {
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 8px;
+  -fx-border-color: #dce4f1;
+  -fx-border-radius: 8px;
+  -fx-font-size: 12px;
+  -fx-text-fill: #374156;
+  -fx-padding: 9px;
+}
+
+.summary-area:focused {
+  -fx-border-color: #9bb0ed;
+  -fx-background-color: #ffffff;
+}
+
+/* =========================================================
+   ATTACHMENT PANEL
+   ========================================================= */
+
+.attachment-panel {
+  -fx-background-color: #fbfcfe;
+  -fx-background-radius: 10px;
+  -fx-border-color: #e0e5ed;
+  -fx-border-radius: 10px;
+  -fx-padding: 10px;
+}
+
+.attachment-hint {
+  -fx-font-size: 10px;
+  -fx-text-fill: #939dae;
+}
+
+/* =========================================================
+   ATTACHMENT LIST
+   ========================================================= */
+
+.attachment-list {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e1e6ee;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+}
+
+.attachment-list .list-cell {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #edf0f5;
+  -fx-border-width: 0 0 1 0;
+  -fx-padding: 8px 10px;
+  -fx-font-size: 11px;
+  -fx-text-fill: #46536a;
+}
+
+.attachment-list .list-cell:hover {
+  -fx-background-color: #f5f8fd;
+}
+
+.attachment-list .list-cell:selected {
+  -fx-background-color: #eaf0ff;
+  -fx-text-fill: #334c99;
+}
+
+/* =========================================================
+   ATTACHMENT BUTTONS
+   ========================================================= */
+
+.attachment-button {
+  -fx-background-color: #eef3fb;
+  -fx-text-fill: #4a5d7d;
+  -fx-font-size: 11px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 7px;
+  -fx-border-color: #d9e1ef;
+  -fx-border-radius: 7px;
+  -fx-padding: 7px 11px;
+  -fx-cursor: hand;
+}
+
+.attachment-button:hover {
+  -fx-background-color: #e3eaf5;
+}
+
+.attachment-button:pressed {
+  -fx-background-color: #d8e1ef;
+}
+
+/* =========================================================
+   EMAIL BODY
+   ========================================================= */
+
+.email-body {
+  -fx-background-color: #fbfcfe;
+  -fx-border-color: #e0e5ed;
+  -fx-border-radius: 9px;
+  -fx-background-radius: 9px;
+  -fx-font-size: 13px;
+  -fx-text-fill: #30394b;
+  -fx-padding: 12px;
+}
+
+.email-body:focused {
+  -fx-border-color: #9cb2ef;
+}
+
+/* =========================================================
+   DELETE ALL SPAM
+   ========================================================= */
+
+.delete-spam-button {
+  -fx-background-color: #fff1f1;
+  -fx-text-fill: #c43e3e;
+  -fx-border-color: #efb6b6;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 14px;
+  -fx-cursor: hand;
+}
+
+.delete-spam-button:hover {
+  -fx-background-color: #ffe2e2;
+  -fx-border-color: #df8989;
+}
+
+.delete-spam-button:pressed {
+  -fx-background-color: #ffd5d5;
+}
+
+.delete-spam-button:disabled {
+  -fx-background-color: #f4f4f5;
+  -fx-text-fill: #a6a8ad;
+  -fx-border-color: #dddddf;
+  -fx-opacity: 0.75;
+}
+
+/* =========================================================
+   DELETE ALL PROMOTIONS
+   ========================================================= */
+
+.delete-promotional-button {
+  -fx-background-color: #fff7e8;
+  -fx-text-fill: #b36a00;
+  -fx-border-color: #f0cf96;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 14px;
+  -fx-cursor: hand;
+}
+
+.delete-promotional-button:hover {
+  -fx-background-color: #ffefd0;
+  -fx-border-color: #e4b86e;
+}
+
+.delete-promotional-button:pressed {
+  -fx-background-color: #ffe5b5;
+}
+
+.delete-promotional-button:disabled {
+  -fx-background-color: #f4f4f5;
+  -fx-text-fill: #a6a8ad;
+  -fx-border-color: #dddddf;
+  -fx-opacity: 0.75;
+}
+
+/* =========================================================
+   DISABLED CONTROLS
+   ========================================================= */
+
+.button:disabled {
+  -fx-opacity: 0.55;
+}
+
+/* =========================================================
+   GENERAL SCROLLBARS
+   ========================================================= */
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+  -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+  -fx-background-color: #c8cfdb;
+  -fx-background-radius: 6px;
+}
+
+.scroll-bar .thumb:hover {
+  -fx-background-color: #adb7c8;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+  -fx-background-color: transparent;
+  -fx-padding: 0;
+}
+
+/* =========================================================
+   TEXT AREA SCROLLBARS
+   ========================================================= */
+
+.text-area .scroll-bar:vertical,
+.text-area .scroll-bar:horizontal {
+  -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar .thumb {
+  -fx-background-color: #c8cfdb;
+  -fx-background-radius: 6px;
+}
+
+/* =========================================================
+   CLEAN FOCUS STYLING
+   ========================================================= */
+
+.button:focused {
+  -fx-background-insets: 0;
+}
+
+.list-view:focused {
+  -fx-background-insets: 0;
+}
+
+.text-field:focused,
+.text-area:focused {
+  -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
+}
